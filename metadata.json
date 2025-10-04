@@ -1,0 +1,5 @@
+{
+  "name": "Mobile Legends Win Rate Calculator",
+  "description": "A calculator to determine the number of consecutive wins needed to achieve a target win rate in Mobile Legends: Bang Bang. Input your current stats and desired win rate to see your goal.",
+  "requestFramePermissions": []
+}

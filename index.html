@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kagura's Win Rate Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-image: url('https://i.imgur.com/8E3C0Gg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-slide-in-up {
+        animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: translateY(30px) scale(0.9);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(-10px) scale(1.05);
+        }
+        80% {
+          transform: translateY(5px) scale(0.98);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
+      .animate-bounce-in {
+        animation: bounceIn 0.8s ease-out forwards;
+      }
+
+      @keyframes sparkleIn {
+        from {
+          opacity: 0;
+          filter: brightness(2) saturate(2);
+        }
+        to {
+          opacity: 1;
+          filter: brightness(1) saturate(1);
+        }
+      }
+      .animate-sparkle-in {
+        animation: sparkleIn 0.8s ease-out forwards;
+      }
+
+      @keyframes nanaCelebrate {
+        0% { transform: scale(1) rotate(0deg); }
+        30% { transform: scale(1.15) rotate(-8deg); }
+        60% { transform: scale(1.15) rotate(8deg); }
+        100% { transform: scale(1) rotate(0deg); }
+      }
+      .animate-nana-celebrate {
+        animation: nanaCelebrate 0.5s ease-in-out;
+      }
+      
+      @keyframes nanaNod {
+        0%, 100% { transform: rotate(0deg) translateY(0); }
+        50% { transform: rotate(2deg) translateY(-4px); }
+      }
+      .animate-nana-nod {
+        animation: nanaNod 0.4s ease-in-out;
+      }
+      
+      @keyframes idleFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+      .animate-idle-float {
+        animation: idleFloat 6s ease-in-out infinite;
+      }
+
+      @keyframes pulse-streak {
+        0%, 100% { transform: scale(1) rotate(0deg); }
+        50% { transform: scale(1.25) rotate(-2deg); }
+      }
+      .animate-pulse-streak {
+        animation: pulse-streak 0.4s ease-in-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
