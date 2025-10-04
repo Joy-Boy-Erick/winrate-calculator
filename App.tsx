@@ -13,29 +13,26 @@ function usePrevious<T>(value: T): T | undefined {
   return ref.current;
 }
 
-const SwordsIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <line x1="20" y1="4" x2="4" y2="20"></line>
-        <line x1="14.5" y1="3.5" x2="20.5" y2="9.5"></line>
-        <line x1="4" y1="20" x2="10" y2="14"></line>
-        <line x1="20" y1="20" x2="4" y2="4"></line>
-        <line x1="20.5" y1="14.5" x2="14.5" y2="20.5"></line>
-        <line x1="10" y1="10" x2="4" y2="4"></line>
+const LuckyCharmIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M16 2H8C6.9 2 6 2.9 6 4v16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+        <path d="M12 4.5c-1.38 0-2.5 1.12-2.5 2.5 0 .58.2 1.12.53 1.55l1.97 2.45 1.97-2.45c.33-.43.53-.97.53-1.55 0-1.38-1.12-2.5-2.5-2.5z" opacity="0.3"/>
     </svg>
 );
 
-const ShieldIcon: React.FC<{ className?: string }> = ({ className }) => (
+const CrescentMoonIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5V6.3l7-3.11v9.8z" />
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.09 15.31c-3.13-.5-5.55-3.15-5.55-6.31 0-3.47 2.83-6.3 6.3-6.3.88 0 1.71.18 2.47.51-2.9.89-5.07 3.54-5.07 6.69 0 1.3.35 2.52.95 3.61z"/>
+        <path d="M18.5 10.5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm-2 2c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5z" opacity="0.6"/>
     </svg>
 );
 
-const TargetIcon: React.FC<{ className?: string }> = ({ className }) => (
+const CherryBlossomIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z" />
-        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z" />
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.24 12.31c-.52.26-1.1.39-1.7.39-1.4 0-2.65-.81-3.24-2.03-.59 1.22-1.84 2.03-3.24 2.03-.6 0-1.18-.13-1.7-.39C4.81 13.56 4 12.35 4 11c0-1.65 1.35-3 3-3 .75 0 1.41.28 1.93.74.52-.46 1.18-.74 1.93-.74s1.41.28 1.93.74c.52-.46 1.18-.74 1.93-.74 1.65 0 3 1.35 3 3 0 1.35-.81 2.56-2.24 3.31zM12 15c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1z"/>
     </svg>
 );
+
 
 const FlameIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -230,13 +227,13 @@ export default function App() {
             setIsPulsingStreak(false);
         }, 400); // The duration of the 'pulse-streak' animation.
 
-        // 2. Start character celebration animation slightly after the number pulse begins.
+        // 2. Start character celebration slightly after the pulse begins for a more pronounced "reaction" feel.
         setTimeout(() => {
             setIsCelebrating(true);
             setTimeout(() => {
                 setIsCelebrating(false);
             }, 500); // The duration of the celebration animation.
-        }, 100); 
+        }, 150); 
     };
 
     const resultAnimationClasses: Record<AnimationStyle, string> = {
@@ -245,9 +242,16 @@ export default function App() {
         Sparkle: 'animate-sparkle-in',
     };
     const resultAnimationClass = resultAnimationClasses[animationStyle];
+    
+    const appStyle = {
+      backgroundImage: "url('https://i.imgur.com/Y1u4jG8.jpg')",
+    };
 
     return (
-        <div className="min-h-screen bg-black/20 flex items-center justify-center p-4">
+        <div 
+          className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-fixed"
+          style={appStyle}
+        >
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
                 <KaguraCharacter isCelebrating={isCelebrating} isReacting={isReacting} />
                 <div className="w-full max-w-md bg-gradient-to-br from-indigo-500/40 via-purple-500/40 to-pink-500/40 backdrop-blur-xl rounded-3xl shadow-2xl shadow-indigo-500/20 border border-white/20 overflow-hidden">
@@ -266,7 +270,7 @@ export default function App() {
                                 value={totalMatches}
                                 onChange={(e) => setTotalMatches(e.target.value)}
                                 placeholder="e.g., 1500"
-                                icon={<SwordsIcon className="w-5 h-5" />}
+                                icon={<LuckyCharmIcon className="w-6 h-6" />}
                                 aria-describedby={error ? "error-message-alert" : undefined}
                                 aria-invalid={!!error}
                                 animationStyle={animationStyle}
@@ -278,7 +282,7 @@ export default function App() {
                                 value={currentWinRate}
                                 onChange={(e) => setCurrentWinRate(e.target.value)}
                                 placeholder="e.g., 55.5"
-                                icon={<ShieldIcon className="w-5 h-5" />}
+                                icon={<CrescentMoonIcon className="w-5 h-5" />}
                                 aria-describedby={error ? "error-message-alert" : undefined}
                                 aria-invalid={!!error}
                                 animationStyle={animationStyle}
@@ -290,7 +294,7 @@ export default function App() {
                                 value={targetWinRate}
                                 onChange={(e) => setTargetWinRate(e.target.value)}
                                 placeholder="e.g., 60"
-                                icon={<TargetIcon className="w-5 h-5" />}
+                                icon={<CherryBlossomIcon className="w-6 h-6" />}
                                 aria-describedby={error ? "error-message-alert" : undefined}
                                 aria-invalid={!!error}
                                 animationStyle={animationStyle}
